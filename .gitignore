@@ -1,0 +1,13 @@
+bin/
+obj/
+.vs/
+pki/
+data/
+data2/
+logs/
+handover/
+handover-lite/
+config.json
+*.csv
+*.log
+*.user

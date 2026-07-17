@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>OpcUaCsvLogger</RootNamespace>
+    <!-- Project convention: bump by 0.1 on every code change (v1.3 -> v1.4 -> ...). -->
+    <Version>1.7.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="config.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- ConfigPanel is its own project; keep its sources out of this project's default globs. -->
+  <ItemGroup>
+    <Compile Remove="ConfigPanel\**" />
+    <EmbeddedResource Remove="ConfigPanel\**" />
+    <None Remove="ConfigPanel\**" />
+    <Content Remove="ConfigPanel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Client" Version="1.5.378.152" />
+  </ItemGroup>
+
+</Project>

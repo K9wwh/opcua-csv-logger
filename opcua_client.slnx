@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ConfigPanel/ConfigPanel.csproj" />
+  <Project Path="OpcUaCsvLogger.csproj" />
+</Solution>
