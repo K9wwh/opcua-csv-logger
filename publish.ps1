@@ -10,6 +10,8 @@ dotnet publish (Join-Path $root 'OpcUaCsvLogger.csproj') -c Release -r win-x64 -
 dotnet publish (Join-Path $root 'ConfigPanel\ConfigPanel.csproj') -c Release -r win-x64 --self-contained -o $out
 
 Copy-Item (Join-Path $root 'TROUBLESHOOTING.md') $out
+# Seed a starting config for the recipient (edit EndpointUrl / NodeIds before first run).
+Copy-Item (Join-Path $root 'config.example.json') (Join-Path $out 'config.json')
 
 Write-Host ''
 Write-Host "Done. Handover folder: $out"
